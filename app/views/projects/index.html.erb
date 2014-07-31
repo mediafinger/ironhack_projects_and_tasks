@@ -4,6 +4,8 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th></th>
+      <th>Task</th>
     </tr>
   </thead>
 
@@ -11,6 +13,17 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
+        <td><%= link_to 'New Task', new_task_path(project_id: project.id) %></td>
+
+        <td><table>
+          <% project.tasks.each do |task| %>
+            <tr>
+              <td><%= task.name %></td>
+              <td><%= link_to task.status, edit_task_path(task) %></td>
+            </tr>
+          <% end %>
+        </table></td>
+
       </tr>
     <% end %>
   </tbody>
