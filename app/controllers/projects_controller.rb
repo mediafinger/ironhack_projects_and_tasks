@@ -2,6 +2,10 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+
+    if params[:status].present?
+      @projects = @projects.select { |project| project.status == params[:status] }
+    end
   end
 
   def new

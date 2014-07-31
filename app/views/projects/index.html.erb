@@ -1,5 +1,13 @@
 <h1>Listing projects</h1>
 
+<p>
+  Show only projects in the status:
+  <%= link_to 'todo', projects_path({status: "todo"}) %>
+  <%= link_to 'doing', projects_path({status: "doing"})  %>
+  <%= link_to 'done', projects_path({status: "done"})  %>
+  or <%= link_to 'show all projects', projects_path %>
+<p>
+
 <table>
   <thead>
     <tr>
