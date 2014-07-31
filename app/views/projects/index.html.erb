@@ -12,7 +12,7 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.name %></td>
+        <td><%= project.name %><%= "(#{project.status})" %></td>
         <td><%= link_to 'New Task', new_task_path(project_id: project.id) %></td>
 
         <td><table>
